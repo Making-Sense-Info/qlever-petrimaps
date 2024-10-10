@@ -27,6 +27,7 @@ jobs:
         - name: Build and push
           uses: docker/build-push-action@v5
           with:
+            push: true
             tags: |
                 ${{ steps.docker_meta.outputs.tags }}
                 ${{ github.ref == 'refs/heads/master' && 'makingsenseinfo/qlever-petrimaps:latest' || '' }}
